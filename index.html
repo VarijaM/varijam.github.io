@@ -1,62 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name</title>
+  <meta charset="utf-8">
+  <title>Varija Mehta</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#photography">Photography & Art</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="first-container">
+    <div id="first">✨ hi! i'm varija ✨</div>
+  </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Write a short bio about yourself here. Include your interests, background, and what you're currently working on.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Project Name 1:</strong> Short description of what it does.</li>
-      <li><strong>Project Name 2:</strong> Short description of what it does.</li>
-    </ul>
-  </section>
-
-  <section id="resume">
-    <h2>Resume</h2>
-    <p><a href="C:\Users\viral\website\varijam.github.io\assets\resume_jun2025.pdf" target="_blank">Download my resume (PDF)</a></p>
-  </section>
-
-  <section id="photography">
-    <h2>Photography & Art</h2>
-    <div class="gallery">
-      <img src="C:\Users\viral\website\varijam.github.io\assets\image.png" alt="Photo 1" />
-      <!-- Add more as needed -->
+  <div id="wrapper">
+    <div class="navbar" id="navbar">
+      <a onclick="showHome()" id="nav-home">🏠 Home</a>
+      <a onclick="showAboutMe()" id="none-home">👩‍💻 About Me</a>
+      <a onclick="showExperiences()" id="none-home">💼 Experiences</a>
+      <a onclick="showProjects()" id="none-home">🛠 Projects</a>
+      <a onclick="showPhotography()" id="none-home">📸 Photography & Art</a>
+      <a onclick="showContact()" id="none-home">📬 Contact</a>
     </div>
-  </section>
+    <hr>
+    <br>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: <a href="mailto:vvm26@cornell.edu">vvm26@cornell.edu</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/varija-mehta/" target="_blank">Varija Mehta</a></li>
-      <li>GitHub: <a href="https://github.com/VarijaM/" target="_blank">@VarijaM</a></li>
-    </ul>
-  </section>
+    <div id="home" class="content">
+      i am currently a junior at cornell university studying computer science and pursuing a minor in data science in the college of engineering. i'm interested in the fields of software engineering, cybersecurity, and finance. i find my personal guiding motto to be:
+      <br><br>
+      <em>"nothing is impossible for even the word itself says i'm possible." 💡</em>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 ♡ Varija M. </p>
-  </footer>
+    <div id="more-abt-me" class="content">
+      👩‍🚀 more about me
+      <ul>
+        <li>🎓 studying computer science + data science minor @ <u>cornell university</u></li>
+        <li>🤖 building cool tech on the <u>cornell mars rover</u> electrical team</li>
+        <li>💻 proficient in <b>python</b> and <b>java</b>; experienced in js/ts, c++, html/css, sql</li>
+        <li>💃 outside of class? i love dancing, food photography, and reading!</li>
+      </ul>
+    </div>
+
+    <div id="stuff-ive-done" class="content">
+      💼 experience
+      <ul>
+        <b>MassMutual — New York City, NY</b>
+        <li><i>Information Risk Consultant (Aug 2024 - May 2025)</i></li>
+        <li>🔍 Analyzed EC2 node data using ML to detect fraud</li>
+        <li>🛠 Built ServiceNow risk calculator increasing efficiency by 90%</li>
+        <li><i>Cyber Advisory Intern (May 2024 - Aug 2024)</i></li>
+        <li>🛡 Managed remediation of 20,000+ vulnerabilities with Qualys/Wiz</li>
+        <li>🧾 Delivered CIS compliance reports for MacOS & Apache</li>
+
+        <br>
+        <b>Cornell Mars Rover — Ithaca, NY</b>
+        <li><i>Electrical Team (Oct 2023 - May 2025)</i></li>
+        <li>🔧 Designed PCBs for mission-critical rover functions</li>
+        <li>⚙️ Created Servo Board controlling 12+ navigation servos</li>
+
+        <br>
+        <b>Bloomberg L.P. — New York City, NY</b>
+        <li><i>Software Development Mentee (Sep 2022 - May 2023)</i></li>
+        <li>📱 Built iOS app for charities using XCode + Swift</li>
+        <li>🧩 Designed components in Figma + boosted API responsiveness by 30%</li>
+      </ul>
+    </div>
+
+    <div id="projects" class="content">
+      🛠 some of my projects — click a title to learn more!
+      <ul>
+        <span id="openModal"><b>📈 FinSights: Investment Recommendation App</b></span>
+        <div id="modal-exchange" class="modal">
+          <div class="modal-content">
+            <span class="close close1">&times;</span>
+            <p>Backend recommender using TF-IDF, cosine similarity, and SVD to match queries with stock profiles.</p>
+            <p>Dynamic allocation engine with Rocchio feedback and beta-based volatility stats via external APIs.</p>
+          </div>
+        </div>
+
+        <br>
+        <span id="openModal2"><b>🖼 Interactive Image Selection Tool</b></span>
+        <div id="hedged" class="modal">
+          <div class="modal-content">
+            <span class="close close2">&times;</span>
+            <p>Smart snipping tool using Dijkstra's algorithm to trace object outlines.</p>
+            <p>Included image transformation, region selection, and real-time UI updates.</p>
+          </div>
+        </div>
+
+        <br>
+        <span id="openModal3"><b>🤖 POOF: Pothole Filling Robot</b></span>
+        <div id="trading-bot" class="modal">
+          <div class="modal-content">
+            <span class="close close3">&times;</span>
+            <p>Autonomous pothole filler using VEX sensors, programmed in C++.</p>
+            <p>Tested on real surfaces using cold patch; earned Procter & Gamble Technical Excellence Award.</p>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <div id="photography" class="content">
+      📸 photography & art
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/waterfall.png" alt="Waterfall" /><p>🌊 Waterfall</p></div>
+        <div class="photo-item"><img src="assets/brunch.png" alt="Brunch" /><p>🍳 Brunch</p></div>
+        <div class="photo-item"><img src="assets/cookies.png" alt="Cookies" /><p>🍪 Cookies</p></div>
+      </div>
+    </div>
+
+    <div id="connect" class="content">
+      📬 let's connect:
+      <br>
+      <a href="assets/resume_jun2025.pdf" target="_blank" rel="noopener noreferrer">📄 resume</a> ·
+      <a href="https://www.linkedin.com/in/varija-mehta/" target="_blank" rel="noopener noreferrer">💼 linkedin</a> ·
+      <a href="https://github.com/VarijaM/" target="_blank" rel="noopener noreferrer">💻 github</a>
+      <br>
+      📧 shoot me an <a href="mailto:vvm26@cornell.edu">email</a> to chat!
+    </div>
+
+    <hr>
+    <br>
+    <div id="end">
+       🚀 to infinity and beyond,<br>
+      <b>varija mehta</b>
+    </div>
+  </div>
 </body>
+
 </html>

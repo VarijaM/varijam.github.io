@@ -2,68 +2,169 @@ body {
     font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: #fdfdfd;
     color: #333;
-    line-height: 1.6;
+    background: linear-gradient(270deg, #f6d5f7, #fbe9d7);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    overflow-x: hidden;
   }
   
-  header {
-    background-color: #ff7f50;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
+  @keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
   }
   
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  hr {
+    width: 70%;
+    margin-top: 1.75%;
+    border: none;
+    height: 1px;
+    background-color: #999;
   }
   
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
+  a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  #first-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #first {
+    margin: 5% auto 2%;
+    font-size: 3rem;
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: 3px solid;
+    overflow: hidden;
+    width: fit-content;
+    animation:
+      typing 2.5s steps(20, end),
+      blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #333 }
+  }
+  
+  .navbar {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
   }
   
-  .section {
+  .navbar a {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .content {
+    display: none;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInContent 1s ease-in;
+  }
+  
+  @keyframes fadeInContent {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li::before {
+    content: '– ';
+    color: #555;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
     padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 8px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
   }
   
-  .about { background: #ffe4e1; }
-  .projects { background: #e6f7ff; }
-  .resume { background: #f0fff0; }
-  .photography { background: #fff0f5; }
-  .contact { background: #ffffe0; }
+  .close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
   
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    margin-top: 1rem;
+    padding: 1rem 0;
   }
   
-  .gallery img {
-    width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  footer {
+  .photo-item {
     text-align: center;
-    padding: 1rem;
-    background-color: #eee;
-    font-size: 0.9rem;
   }
   
+  .photo-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .photo-item img:hover {
+    transform: scale(1.03);
+  }
+  
+  .photo-item p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+  
+  #end {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }  
